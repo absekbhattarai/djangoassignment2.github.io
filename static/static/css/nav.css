@@ -1,0 +1,38 @@
+
+ul {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  background-color: #7c83eb;
+  margin: -10px;
+  height: 7vh;
+  font-size: 18px;
+  align-content: center;
+  position: fixed;
+  top: 5px;
+  width: 100%;
+  overflow: hidden;
+}
+
+li{
+    display: inline;
+}
+
+a{
+    text-decoration: none;
+    padding: 45px;
+    color: #1e1e27;
+    position: static;
+}
+
+body{
+  background-color: rgb(238, 238, 231);
+}
+
+ul a:hover {
+  background: #ddd;
+  color: black;
+  size: 2vh;
+}

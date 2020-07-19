@@ -1,0 +1,87 @@
+
+.button {
+  background-color: #3a32a862;
+  border: none;
+  color: white;
+  padding: 8px 20px;
+  font-style: normal;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 1rem;
+  margin-left: 42%;
+  border-radius: 8px;
+}
+
+
+header{
+  margin-left: 550px;
+  margin-top: 12vh;
+  font-size: 30px;
+  padding-bottom: 40px;
+ 
+  font-family: 'Rowdies', cursive;
+  font-size: 35px;
+  color: rgb(37, 36, 36);
+}
+
+.detail-content{
+  margin-left: 20px;
+  position: relative;
+  float: left;
+  background-color: rgba(75, 57, 230, 0.123);
+  padding-top: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+  border-radius: 8px;
+  
+}
+
+.detail-content label{
+  color: rgba(152, 56, 230, 0.534);
+}
+
+.detail-content input{
+  border: none;
+  border-radius: 8px;
+  height:18px;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 14px;
+  color: #666;
+  
+  
+}
+
+
+
+.blog-details{
+    padding-left: 33%;
+    font-family:  Roboto, Arial, sans-serif;
+    font-size: 18px;
+    line-height: 18px;
+    color: rgba(33, 33, 185, 0.158);
+
+
+    
+
+}
+
+.blog-details input{
+    width:300px;
+    height: 5vh;
+    background-color: rgb(181, 187, 223);
+    border: none;
+    border-radius: 10px;
+}
+
+.blog-content textarea{
+    width:400px;
+    height: 50vh;
+    border:none;
+    border-radius: 10px;
+    margin-top: 5px;
+    background-color: rgb(204, 207, 224);
+
+}

@@ -1,0 +1,104 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{pageTitle}}</title>
+    <link rel='stylesheet' href="{% static 'static/css/landing.css' %}">
+</head>
+<body>
+<main>
+    <!-- header section start-->
+    <div class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="m-f">Welcome !</h1>
+                <h2>To <spam>Blog Portal</spam>.</h2>
+
+                <a href="/homepage/all-blogs" class="btn btn-trans">All Blogs</a>
+                <a href="/homepage/blog-form" class="btn btn-fill">Write A Blog</a>
+
+
+            </div>
+        </div>
+    </div>
+    <!--header section end-->
+    <!--intro section start-->
+    <section class="intro">
+        <div class="container intro-content">
+            <div class="intro-img">
+                <img src="{% static 'static/images/home.png' %}" width="40%">
+            </div>
+            <div class="intro-text">
+                <h1 class="m-f">About My Website</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam sunt,
+                    maxime pariatur omnis quia voluptatum excepturi odio dolor eos vitae reiciendis,
+                    modi ab, quo tenetur delectus! Iusto consequatur obcaecati molestias.
+                </p>
+            </div>
+
+        </div>
+    </section>
+    <!--intro secction end-->
+    <!--service section start-->
+    <section class="services">
+        <div class="container service-content">
+            <div class="bucket">
+                <h1>Service</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo eum iste sequi.
+                    Molestiae cumque similique cum sint, eum aliquam nesciunt unde delectus quaerat fugiat vel fuga.
+
+                </p>
+            </div>
+            <div class="bucket">
+                <h1>Products</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo eum iste sequi.
+                    Molestiae cumque similique cum sint, eum aliquam nesciunt unde delectus quaerat fugiat vel fuga.
+
+                </p>
+            </div>
+            <div class="bucket">
+                <h1>Benefits</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo eum iste sequi.
+                    Molestiae cumque similique cum sint, eum aliquam nesciunt unde delectus quaerat fugiat vel fuga.
+
+                </p>
+            </div>
+        </div>
+    </section>
+    <!--service sction end-->
+    <!--contact section start-->
+    <section class="contact">
+        <div class="container contact-section">
+            <h1 class="m-f">Get in touch</h1>
+            <form method="POST" action="#">
+                <div class="full-name">
+                    <input type="text" name="full_name" placeholder="Your Name" required>
+                </div>
+                <div class="email">
+                    <input type="text" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="message">
+                    <textarea name="message" placeholder="Message" row="6"></textarea>
+                </div>
+                <div class="submit">
+                    <input type="submit" name="submit" class="btn btn-submit" value="SEND MESSAGE">
+                </div>
+            </form>
+        </div>
+    </section>
+    <!--contact section end-->
+    <!--footer section start-->
+    <footer>
+        &copy 2020
+    </footer>
+    <!--footer section end-->
+</main>
+</body>
+</html>

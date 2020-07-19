@@ -1,0 +1,32 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{pageTitle}}</title>
+    <link rel="stylesheet" href="{%static 'static/css/all-blog.css'%}">
+
+
+
+</head>
+<body>
+<main>
+    {% include 'templates/nav.html' %}<br><br><br>
+    {% if blogTable%}
+         {% for blog in blogTable %} 
+                <div class="testbox">
+                    <div class="testbox-content">
+                    <div class="blog-title"><p style="font-size: 35px;color: rgb(44, 5, 184);">{{blog.title}}</p></div>
+                    <div class="blog-content"><p>{{blog.blog}}</p></div>
+                    
+                    <div class="name-age"><p style="font-size: 18px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; ">By: {{blog.name}}<div><spam style="margin-left: 60%;padding-right:0;font-style: italic;">Posted at {{ blog.posted_at }}</spam></div></p></div>
+                    </div>
+                </div>
+        {%endfor%}
+    {%  else  %}
+            <h1 style="text-align: center; margin-top: 10vh;font-size: 45px;color: rgb(70, 78, 197);">No Blogs Yet!</h1>
+    {% endif%}
+</main>
+</body>
+</html>

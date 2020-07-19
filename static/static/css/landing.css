@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
+
+
+.m-f{
+    font-family:'Aclonica',sans-serif;
+    text-transform: uppercase;
+}
+
+*{
+    margin: 0;
+    padding:0;
+}
+body{
+    background-image: url('../images/homepage.jpg');
+    background-size:cover;
+    background-attachment: fixed;
+    position: relative;
+}
+main{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+}
+
+.container{
+    width:70%;
+    margin:0 auto;
+}
+
+.header{
+    height:100vh;
+    color: #f8f8f5;
+    line-height:50px;
+}
+
+.header-content{
+    padding-top: 20vh;
+    text-align: center;
+}
+
+.header-content h1 , .intro-content h1, .contact-section h1{
+    font-size: 42px;
+}
+
+.header-content h2 spam{
+    color:rgb(216, 230, 34);
+    line-height: 75px;
+}
+
+.btn{
+    background-color:transparent;
+
+    border:3px solid rgb(52, 112, 180);
+    padding: 10px 23px;
+    font-weight: bolder;
+    text-decoration: none;
+    color: rgb(228, 231, 35);
+    margin-right: 15px;
+    transition: all 300ms ease-in-out;
+}
+
+.btn-fill{
+    background-color: white;
+    color: #000000;
+}
+
+.btn-fill:hover{
+    background-color: rgb(46, 117, 184);
+    color:black;
+    border-color: transparent;
+}
+
+.btn-trans:hover{
+    background-color:rgb(46, 117, 184);
+    color:#000000;
+    border-color:transparent;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.intro{
+    background-color: #ffffff;
+    padding:15vh 0;
+}
+
+.intro-content{
+    height: 35vh;
+    display:flex;
+    flex-wrap: wrap;
+    text-align: initial;
+}
+
+.intro-content div{
+    width:50%;
+}
+
+.intro-text p{
+    text-align: justify;
+    color: rgb(88, 140, 184);
+    line-height: 40px;
+}
+
+.intro-img {
+    text-align: center;
+    padding-top: 1vh;
+}
+
+.services{
+    background-color:#4059aa ;
+    height: 50vh;
+    clip-path:polygon(0 0, 15% 0, 50% 20%,85% 0,100% 0,100% 100%,0 100%,0 0) ;
+    margin-top: -10vh;
+}
+
+.service-content{
+    display: flex;
+    flex: wrap;
+}
+
+.bucket{
+    width:25%;
+    margin: 150px 3%;
+    color:#ffffff;
+}
+
+.bucket p{
+    color: lightcyan;
+    text-align: justify;
+    line-height: 25px;
+}
+
+.contact{
+    background-color:white;
+    padding:10vh 0;
+    text-align: center;
+}
+
+input[type="text"],input[type="text"],textarea{
+    width: 100%;
+    padding:12px ;
+    border-color: 1px solid #cccccc;
+}
+
+.contact-section div{
+    padding:10px 0;
+}
+
+.btn-submit{
+    background-color:#000000;
+    border-color: white;
+    color:#ffffff;
+}
+
+.btn-submit:hover{
+    background-color:rgb(46, 117, 184);
+    color: rgb(5, 7, 10);
+    border-color: transparent;
+}
+
+footer{
+    background-color:#4059aa ;
+    height: 10vh;
+    clip-path:polygon(0 0, 15% 0, 50% 20%,85% 0,100% 0,100% 100%,0 100%,0 0) ;
+    margin-top: -10vh;
+    text-align: center;
+    padding-top: 10vh;
+}
+
+
+
+/* FOR MOBILE VERSION COMPATIBILITY */
+
+@media screen and (max-width:450px){
+
+    .header{
+        color: #e4e430;
+    }
+
+    .header-content h2 spam{
+        color:rgb(248, 252, 251);
+
+    }
+
+    .btn-trans{
+        color:rgb(228, 245, 73);
+    }
+
+    .container{
+        width: 100%;
+    }
+
+    .header-content h1, .intro-content h1{
+        font-size: 20px;
+
+    }
+
+    .intro{
+        padding-top: 15px;
+        padding-bottom: 13rem;
+    }
+
+    .intro-content{
+        height: 35vh;
+        display:block;
+        text-align: center;
+    }
+
+    .intro-content p{
+        text-align: center;
+        padding-right: 20px;
+    }
+
+    .intro-content div{
+        width:100%;
+        font-size: medium;
+    }
+
+    .intro-text{
+        line-height: 10px;
+    }
+
+    .services{
+        padding-top: -20px;
+        padding-bottom: 8px;
+    }
+
+    .bucket h1{
+        font-size: 16pt;
+    }
+
+    .bucket p{
+        height: 20vh;
+        margin-top: 2%;
+        text-align: start;
+        font-size: 8pt;
+        line-height: 15px;
+        padding-bottom: 4rem;
+    }
+
+    .contact-section div{
+        text-align: center;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .contact-section h1{
+        font-size: 20px;
+    }
+
+
+    input[type="text"],input[type="text"],textarea{
+        width: 50%;
+        padding:10px ;
+        line-height: 10px;
+    }
+
+    .btn-submit{
+        padding-top: 10px;
+    }
+}
+
+
+
+
+@media screen and (max-width: 320px){
+
+    .header-content h2{
+        font-size: 14pt;
+    }
+
+    .services{
+        margin-top: -75px;
+        height: 65vh;
+
+
+    }
+
+    .intro{
+        height: 40vh;
+    }
+
+    .service-content{
+        display: flex;
+        flex: wrap;
+    }
+
+    .intro-text div{
+        line-height: 6px;
+        padding-bottom: 3rem;
+    }
+}
