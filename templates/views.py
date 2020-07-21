@@ -2,7 +2,7 @@ from django import template
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from datetime import date
-from .forms import MyFormBlog
+from .forms import MyFormBlog, MyAuthor
 from .models import blogDetails,authorDetails
 
 
@@ -26,19 +26,23 @@ def todayBlog(request):
 
 def blogForm(request):
     blogForm = MyFormBlog()
-    
+    authorForm = MyAuthor()
     if request.method == 'POST':
-
         blogForm = MyFormBlog(request.POST)
-        
-       
-        
-        if blogForm.is_valid():
-            blogForm.save()
+        authorForm = MyAuthor(request.POST)
+        if blogForm.is_valid() and authorForm.is_valid():
+            instance = authorForm.save()
+            instance1 = instance.email # instance1 gets the email that to be saved in the blogDetails
+            # blogForm.save(commit=False)
+            # blogForm.authorEmail = instance1  -> Here as I haven't included "authorEmail" in forms i.e. blogForm
+            # blogForm.save()
+
+
+            
             return redirect('/homepage/all-blogs/')
         else:
             return HttpResponse("something went wrong")
-    return render(request, "templates/blog-form.html",{'pageTitle': 'Write a Form','blogForm':blogForm})
+    return render(request, "templates/blog-form.html",{'pageTitle': 'Write a Form','blogForm':blogForm,'authorForm':authorForm})
 
 
 
