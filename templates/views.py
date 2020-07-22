@@ -32,13 +32,9 @@ def blogForm(request):
         authorForm = MyAuthor(request.POST)
         if blogForm.is_valid() and authorForm.is_valid():
             instance = authorForm.save()
-            instance1 = instance.email # instance1 gets the email that to be saved in the blogDetails
-            # blogForm.save(commit=False)
-            # blogForm.authorEmail = instance1  -> Here as I haven't included "authorEmail" in forms i.e. blogForm
-            # blogForm.save()
-
-
-            
+            blog_instance = blogForm.save(commit=False)
+            blog_instance.authorDetails = instance
+            blogForm.save()
             return redirect('/homepage/all-blogs/')
         else:
             return HttpResponse("something went wrong")
