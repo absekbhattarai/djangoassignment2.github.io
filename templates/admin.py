@@ -1,8 +1,8 @@
 from django.contrib import admin
-from .models import blogDetails,authorDetails
+from .models import blog_Details,author_Details
 
-admin.site.register(authorDetails)
-admin.site.register(blogDetails)
+admin.site.register(author_Details)
+admin.site.register(blog_Details)
 
 
 # admin panal 

@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from datetime import date
 from .forms import MyFormBlog, MyAuthor
-from .models import blogDetails,authorDetails
+from .models import blog_Details,author_Details
 
 
 
@@ -12,15 +12,15 @@ def landingPage(request):
 
 
 def blogTable(request):
-    blogTable = blogDetails.objects.all()
-    authorTable = authorDetails.objects.all()
+    blogTable = blog_Details.objects.all()
+    authorTable = author_Details.objects.all()
     return render(request, "templates/blog-table.html",{'pageTitle': 'All Blogs','blogTable':blogTable,'authorTable':authorTable})
     
 
 def todayBlog(request):
     today = date.today()
-    todayblogTable = blogDetails.objects.filter(posted_at=today)
-    todayauthorTable = authorDetails.objects.all()
+    todayblogTable = blog_Details.objects.filter(posted_at=today)
+    todayauthorTable = author_Details.objects.all()
     return render(request, "templates/today-blog.html",{'pageTitle': 'Today Blogs','todayauthorTable': todayauthorTable,'todayblogTable':todayblogTable})
 
 
@@ -33,7 +33,7 @@ def blogForm(request):
         if blogForm.is_valid() and authorForm.is_valid():
             instance = authorForm.save()
             blog_instance = blogForm.save(commit=False)
-            blog_instance.authorDetails = instance
+            blog_instance.authorEmail = instance
             blogForm.save()
             return redirect('/homepage/all-blogs/')
         else:

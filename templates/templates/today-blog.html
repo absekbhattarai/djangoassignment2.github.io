@@ -20,7 +20,7 @@
                     <div class="blog-title"><p style="font-size: 35px;color: rgb(219, 51, 51);">{{blog.title}}</p></div>
                     <div class="blog-content"><p>{{blog.blog}}</p></div>
                     
-                    <div class="name-age"><p style="font-size: 18px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; ">By: {{blog.name}}<div><spam style="margin-left: 60%;padding-right:0;font-style: italic;">Posted at {{ blog.posted_at }}</spam></div></p></div>
+                    <div class="name-age"><p style="font-size: 18px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; ">By: {{blog.authorEmail.name}}<div><spam style="margin-left: 60%;padding-right:0;font-style: italic;">Posted at {{ blog.posted_at }}</spam></div></p></div>
                     </div>
                 </div>
         {%endfor%}
