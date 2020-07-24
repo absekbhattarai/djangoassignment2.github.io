@@ -22,10 +22,6 @@
         <form action="/homepage/blog-form/" method="POST">
             {% csrf_token %}
             <header>Write a Blog!</header>
-            <div class="detail-content">
-            <div class="form-name"><label>Name</label> {{ authorForm.name }}<br><br></div>
-            <div class="form-email"><label>E-mail</label>{{ authorForm.email }}<br></div>
-            </div>
             <div class="blog-details">
             <div class="form-title"><label>Title</label> {{ blogForm.title }}<br><br></div>
             <div class="blog-content"><label style="margin-left: 120px;font-size: 25px;">Your Blog</label> <br>{{ blogForm.blog }}<br><br></div>

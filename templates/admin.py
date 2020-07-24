@@ -1,10 +1,9 @@
 from django.contrib import admin
-from .models import blog_Details,author_Details
-
-admin.site.register(author_Details)
-admin.site.register(blog_Details)
+from .models import BlogDetails,UserInfo,User
 
 
-# admin panal 
-#USERNAME: absek
-#password: 123
+admin.site.register(UserInfo)
+admin.site.register(BlogDetails)
+
+
+

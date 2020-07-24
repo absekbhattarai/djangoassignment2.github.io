@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{pageTitle}}</title>
+    <link rel='stylesheet' href="{% static 'static/css/login-register.css' %}">
+</head>
+<body>
+    <main>
+        
+        <form action="/login/" method="POST">
+        {% csrf_token %}
+        <div class="login-content">
+            <header class="header">Login</header>
+                    <div class="username"><label>Username </label><input type="text" name="username"></div><br>
+                    <div class="password" style="padding-right: 10px;margin-left: 2px;"><label>Password </label><input style="margin-left: 4px;" type="password" name="password"></div><br>
+                    <input class="login-button" type="Submit" value="Login"></input>
+                    <p>Click <a href="/register/">here</a> to register</p> 
+        </div>
+        </form>
+    </main>
+</body>
+</html>

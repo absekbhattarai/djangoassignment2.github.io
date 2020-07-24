@@ -1,0 +1,35 @@
+{% load static%}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{pageTitle}}</title>
+    <link rel="stylesheet" href="{% static 'static/css/edit-profile.css' %}">
+   
+    
+</head>
+<body>
+    {% include 'templates/nav.html' %}<br><br><br>
+    <header>Edit Profile</header>
+    <div class="image-bio-wrapper">
+        <div class="image-container">
+            
+        </div>
+        <div class="details">
+            <div class="name-container"><p class="profile-name">{{request.user}}</p></div>
+            <div class="fname"><label>First Name </label>{{ request.user.first_name}}</div><br>
+            <div class="lname"><label>Last Name </label>{{ request.user.last_name}}</div><br>
+            <div class="date-of-birth"><label>D.O.B. </label>{{ user_form.date_of_birth}}</div><br>
+        </div>
+        <div class="btn">
+            <a href="/homepage/profile/edit-profile/">Edit Profile</a>
+            
+        </div>
+        
+    </div>
+</body>
+</html>

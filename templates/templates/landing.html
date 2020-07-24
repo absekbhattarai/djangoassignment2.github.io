@@ -10,15 +10,19 @@
 </head>
 <body>
 <main>
-    <!-- header section start-->
+  
+    {% if user.is_authenticated %}
+            <h1>LOGIN</h1>
+    {% endif %}
     <div class="header">
         <div class="container">
             <div class="header-content">
                 <h1 class="m-f">Welcome !</h1>
                 <h2>To <spam>Blog Portal</spam>.</h2>
-
-                <a href="/homepage/all-blogs" class="btn btn-trans">All Blogs</a>
-                <a href="/homepage/blog-form" class="btn btn-fill">Write A Blog</a>
+                
+                <a href="/select-login" class="btn btn-trans">Login</a>
+                <a href="/register" class="btn btn-fill">Register</a><br>
+                <a href="/all-blogs/" class="btn btn-fill" style="background-color: rgb(158, 140, 223);">As a guest</a>
 
 
             </div>

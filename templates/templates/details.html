@@ -1,0 +1,23 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{pageTitle}}</title>
+    <link rel="stylesheet" href="{% static 'static/css/detail.css' %}">
+</head>
+
+<body>
+    {% include 'templates/nav.html' %}<br><br><br>
+    <main>
+        <div class="detail-content">
+            <header>{{detail_obj.title}}</header>
+            <div class="author-date"><p>{{detail_obj.author_username.first_name|upper}}, &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Posted At: {{ detail_obj.posted_at}} </p></div>
+            
+            <div class="blog-description"><p>&nbsp&nbsp&nbsp {{ detail_obj.blog}}</p></div>  
+        </div>
+    </main>
+</body>
+</html>

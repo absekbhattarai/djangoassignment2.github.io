@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Trirong:wght@500&display=swap');
+
+body{
+    width: 100%;  
+}
+
+main{
+    border: solid rgba(152, 121, 201, 0.541);
+    border-radius: 20px;
+    width: 600px;
+    margin-left: 28%;
+    margin-right: 20%;
+    margin-top: 40px;
+    
+}
+
+.detail-content{
+    position: relative;
+    margin-bottom: 80px;
+    margin-left: 20px;
+    margin-right: 20px;
+    line-height: 30px;
+    
+}
+
+.detail-content header{
+    padding-top: 20px;
+    font-family: 'Trirong', serif;
+    text-align: center;
+    font-size: 35px;  
+    padding-bottom: 25px;
+}
+
+.detail-content p{
+    padding-left: 20px;
+}
+
+.author-date{
+    font-size: small;
+    font-style: italic;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.blog-description p{
+    font-size: 32px;
+
+}

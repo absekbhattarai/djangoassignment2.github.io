@@ -1,0 +1,58 @@
+{% load static%}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{pageTitle}}</title>
+    <link rel="stylesheet" href="{% static 'static/css/profile.css' %}">
+   
+    
+</head>
+<body>
+    {% include 'templates/nav.html' %}<br><br><br>
+    <div class="image-bio-wrapper">
+        <div class="image-container">
+            
+        </div>
+        <div class="details">
+            <div class="name-container"><p class="profile-name">{{request.user}}</p></div>
+            <div class="bio-container">PLACE FOR BIO</div>
+            <div class="dob-conatiner"><p class="dob"><small style="text-transform: uppercase; font-weight: bold;">Date of Birth: </small>{{user_profile.date_of_birth}}</p></div>
+            <div class="joined-container"><h4 class="joined-at">Joined: {{request.user.date_joined | date:"F d Y"}}</h4></div> 
+        </div>
+        <div class="edit-btn">
+            <a href="/homepage/profile/edit-profile/{{request.user.id}}">Edit Profile</a>
+        </div>
+        
+    </div>
+    <div class="testbox-img">
+        <a href="/homepage/blog-form/">
+        <img src="{% static 'static/images/plus-sign.png' %}" width="30%"> </a>
+    </div>
+    <div class="blog-container">
+        {% if blogTable%}
+    
+         {% for blog in blogTable %} 
+         
+                <div class="testbox">
+                    <div class="testbox-content">
+                    <div class="blog-title"><p style="font-size: 35px;color: rgb(44, 5, 184);">{{blog.title}}</p></div>
+                    <div class="blog-content"><p>{{blog.blog}}</p></div>
+                    
+                    <div><spam style="margin-left: 550px;padding-right:0;font-style: italic;">Posted at: {{ blog.posted_at }}</spam></div></p></div>
+                    </div>
+                </div>
+        {%endfor%}
+
+        
+    {%  else  %}
+            <br><br><h2 style="text-align: center;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; margin-top: 10vh;font-size: 45px;color: rgb(59, 54, 75);">No Blog Posted!</h2>
+    {% endif%}
+   
+    </div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+body{
+    width: 98%;
+  }
+  
+  .testbox {
+    float: left;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 150px;
+    padding-right: 15px;
+    color: rgb(0, 0, 0);
+    padding-top: 2px;
+    padding-bottom: 40px;
+
+    
+    
+  }
+  
+  
+  
+  .testbox-content{
+  background-color: rgb(226, 227, 231);
+  padding-left: 25px;
+  padding-bottom: 20px;
+  padding-right: 2px;
+  border-radius: 8px;
+  width: 600px;
+  
+  }
+  
+  
+  
+  .testbox-img{
+    width:256px;
+    float: left;
+    margin-left: 55px;
+    margin-bottom: 40px;
+  
+    display:flex;
+    align-items: center;
+    justify-content: center;
+  
+    
+  }
+  
+  .testbox-img a{
+    padding: 0;
+    text-align: center;
+  }
+  
+  .testbox-img img:hover{
+    transform: scale(1.3);
+  }
+  
+  .wrapper{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .blog-content{
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  .detail{
+    margin-top: 40px;
+    margin-left: 15px;
+    background-color: rgb(158, 159, 238);
+    width: min-content;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 12px;
+    border-radius: 8px;
+  }
+  
+  .detail:hover{
+    background-color: rgb(97, 99, 223);
+    
+    
+  }

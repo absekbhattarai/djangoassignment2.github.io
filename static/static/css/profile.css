@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Kanit&display=swap');
+
+body{
+    width: 99%;
+}
+.image-bio-wrapper{
+    margin-top: -17px;
+    float: left;
+    position:fixed;
+    background-color: rgba(165, 170, 197, 0.233);
+    padding-left: 50px;
+    padding-right: 100px;
+    padding-top: 50px;
+    padding-bottom: 50%;
+    
+}
+
+.image-container{
+    border: solid rgba(109, 102, 146, 0.384);
+    width: 200px;
+    height: 30vh;
+    border-radius: 20px;
+}
+
+.details{
+    margin-left: 20px;
+    margin-top: 10px;
+    
+}
+
+.name-container p{
+    
+    font-size: 20px;
+    text-transform: uppercase; 
+    font-family: 'Kanit', sans-serif;
+    font-weight: bold;
+}
+
+.bio-container{
+    font-family: 'Dancing Script', cursive;
+    
+    font-weight: bold;
+}
+
+.testbox {
+    
+    display: flex;
+    flex-wrap: wrap;
+    
+    margin-left: 400px;
+    padding-right: 30px;
+    color: rgb(0, 0, 0);
+    padding-top: 2px;
+    padding-bottom: 40px;
+    
+  }
+  
+  
+  
+  .testbox-content{
+  background-color: rgb(226, 227, 231);
+  padding-left: 25px;
+  padding-bottom: 20px;
+  padding-right: 2px;
+  border-radius: 8px;
+  width: 800px;
+  box-shadow: rgba(163, 154, 154, 0.671);
+  }
+  
+
+  .blog-content{
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  .testbox-img{
+      border-radius: 10px;
+      position: fixed;
+      margin-left: 84%;
+      margin-top: 25px;
+  }
+
+  .edit-btn{
+      width: 100%;
+      margin-left: 15px;
+      border-radius: 6px;
+      background-color: rgb(182, 181, 231);
+      border: none;
+  }
+
+  .edit-btn:hover{
+      background-color: rgb(85, 62, 211);
+      color: white;
+  }
+  

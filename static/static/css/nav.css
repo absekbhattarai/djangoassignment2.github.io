@@ -5,8 +5,9 @@ ul {
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
-  background-color: #7c83eb;
-  margin: -10px;
+  background-color: #7c84eb;
+  margin-top: -10px;
+  margin-left: -8px;
   height: 7vh;
   font-size: 18px;
   align-content: center;
@@ -35,4 +36,9 @@ ul a:hover {
   background: #ddd;
   color: black;
   size: 2vh;
+}
+
+.active li{
+  background-color: black;
+  color: white;
 }

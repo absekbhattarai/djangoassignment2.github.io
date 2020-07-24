@@ -1,0 +1,27 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{pageTitle}}</title>
+    <link rel='stylesheet' href="{% static 'static/css/login-register.css' %}">
+</head>
+<body>
+    <main>
+       <div class="admin-logo">
+            <p class="logo-name">Admin </p>
+            <a href="/admin">
+            <img src="{% static 'static/images/admin-logo.png' %}" width="8%">  
+            </a>
+       </div>
+       <div class="user-logo">
+        <p class="user-logo-name">User </p>
+        <a href="/login/">
+        <img src="{% static 'static/images/user-logo.jpg' %}" width="7.5%">  
+        </a>
+   </div>
+    </main>
+</body>
+</html>

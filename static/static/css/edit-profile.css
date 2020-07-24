@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+
+header{
+    font-size: 30px;
+    letter-spacing: 2px;
+    text-transform: uppercase; 
+    font-family: 'Kanit', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 20px;
+    color: rgb(126, 133, 228);
+}
+
+.image-bio-wrapper{
+  margin-left: 657px;
+    
+}
+
+.image-container{
+    border: solid rgba(109, 102, 146, 0.384);
+    width: 200px;
+    height: 30vh;
+    border-radius: 20px;
+}
+
+.details{
+    margin-left: 20px;
+    margin-top: 10px;
+    
+}
+
+.name-container p{
+    
+    font-size: 20px;
+    text-transform: uppercase; 
+    font-family: 'Kanit', sans-serif;
+    font-weight: bold;
+}
+
+.bio-container{
+    font-family: 'Dancing Script', cursive;
+    
+    font-weight: bold;
+}

@@ -1,10 +1,25 @@
 {% load static%}
 <link rel="stylesheet" href="{% static 'static/css/nav.css' %}">
 <ul>
-    <li><a href="/" style="color: black;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Home</a></li><br>
-    <li><a href="/homepage/today-blogs">Today's Blog</a></li>
-    <li><a href="/homepage/all-blogs">All Blog</a></li>
-    <li><a href="/homepage/blog-form">Write a Blog</a></li>
+    {% if user.is_authenticated %}
+    <li><a href="/all-blogs" style="color: black;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Home</a></li><br>
+    {% else %}
+    <li><a href="/homepage" style="color: black;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Home</a></li><br>
+    {%endif%}
 
+    
+    
+    <li><a href="/homepage/today-blogs">Today's Blog</a></li>
+    
+    
+    {% if user.is_authenticated %}
+    
+            <li style="position:relative;margin-left: 800px;"><a href="/homepage/profile/">Welcome, {{request.user}}.</a></li>
+            <li><a href="/logout/" style="position:static;margin-left: 10px;">Logout</a></li>  
+    {% else %}
+        <li><a href="/login/" style="position:static;margin-left: 1024px;">Login</a></li>
+    {%endif%}
+    
+    
 
 </ul>
