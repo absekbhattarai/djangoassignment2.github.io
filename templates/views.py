@@ -134,7 +134,6 @@ def edit_user_profile(request):
         if user_form.is_valid and bio_form.is_valid:
             user_form.save()
             bio_instance = bio_form.save(commit=False)
-            bio_instance.user_id = request.user.id
             bio_instance.save()
             return redirect('/homepage/profile/')
         else:
@@ -169,4 +168,4 @@ def edit_blog(request,blog_id):
 def delete_blog(request,form_id):
      blog_object = BlogDetails.objects.get(id = form_id)
      blog_object.delete()
-     return redirect('/homepage/profile/')
+     return redirect('/homepage/profile')

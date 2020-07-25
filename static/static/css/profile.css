@@ -84,12 +84,13 @@ body{
       width: 100%;
       margin-left: 15px;
       border-radius: 6px;
-      background-color: rgb(182, 181, 231);
+      padding-top: 10px;
+      background-color: rgba(120, 119, 167, 0.849);
       border: none;
   }
 
   .edit-btn:hover{
-      background-color: rgb(85, 62, 211);
+      background-color: rgb(83, 123, 255);
       color: white;
   }
 

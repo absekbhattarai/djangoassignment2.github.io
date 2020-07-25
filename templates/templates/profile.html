@@ -20,7 +20,9 @@
         </div>
         <div class="details">
             <div class="name-container"><p class="profile-name">{{request.user}}</p></div>
-            <div class="bio-container">PLACE FOR BIO</div>
+            
+            <div class="bio-container">{{user_profile.bio}}</div>
+            
             <div class="dob-conatiner"><p class="dob"><small style="text-transform: uppercase; font-weight: bold;">Date of Birth: </small>{{user_profile.date_of_birth}}</p></div>
             <div class="joined-container"><h4 class="joined-at">Joined: {{request.user.date_joined | date:"F d Y"}}</h4></div> 
         </div>

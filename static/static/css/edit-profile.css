@@ -24,21 +24,41 @@ header{
 }
 
 .details{
-    margin-left: 20px;
-    margin-top: 10px;
-    
+    margin-top: 30px;
 }
 
-.name-container p{
-    
-    font-size: 20px;
-    text-transform: uppercase; 
+label{
     font-family: 'Kanit', sans-serif;
-    font-weight: bold;
+    font-size: 18px;
+    margin-left: -60px;
 }
 
-.bio-container{
-    font-family: 'Dancing Script', cursive;
-    
-    font-weight: bold;
+input{
+    border: solid rgba(129, 108, 221, 0.452);
+    width: 200px;
+    height: 30px;
+    border-radius: 12px;
+    color: black;
+}
+
+.bio input{
+    width: 350px;  
+}
+
+.btn button{
+    background-color: #6da3c7ce;
+    border: none;
+    color: white;
+    width: 220px;
+    font-style: normal;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    height: 30px;
+    border-radius: 10px;
+}
+
+.btn button:hover{
+    background-color: #1da5ff;
+    color: black;
 }

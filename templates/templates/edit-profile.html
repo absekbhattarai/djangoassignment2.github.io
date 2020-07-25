@@ -15,14 +15,15 @@
 <body>
     {% include 'templates/nav.html' %}<br><br><br>
     <header>Edit Profile</header>
-    <form action="/homepage/profile/edit/" method="POST" enctype="multipart/form-data">
+    <form action="/homepage/profile/edit-profile/" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
     {% for u_bio in bio_object %}    
     <div class="image-bio-wrapper">
         <div class="image-container">
             <img class="profile-image" src="{{u_bio.profile_picture.url }}"><br>
         </div>
         <div class="details">
-            <div class="name-container"></div>
+            
             <div class="fname"><label>First Name </label>{{user_form.first_name}}</div><br>
             <div class="lname"><label>Last Name </label>{{ user_form.last_name}}</div><br>
             <div class="date-of-birth"><label>D.O.B. </label><input name="date_of_birth" value="{{ u_bio.date_of_birth}}"></div><br>
@@ -30,7 +31,7 @@
             
         </div>
         <div class="btn">
-            <button type="submit" class="edit-btn">Edit Profile</a>  
+            <button type="submit" class="edit-btn">Edit Profile</button>  
         </div>
    
         
