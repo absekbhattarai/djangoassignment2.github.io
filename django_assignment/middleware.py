@@ -1,5 +1,5 @@
 from django.shortcuts import redirect
-from templates.views import blog_form
+from templates.views import blog_form,detail_of_blog
 
 class MyCustomMiddleware:
     def __init__(self,get_response):
@@ -14,6 +14,7 @@ class MyCustomMiddleware:
             if not request.user.is_authenticated and view_func ==blog_form:
                     return redirect('/login/')
                 
-
+            if not request.user.is_authenticated and view_func ==detail_of_blog:
+                    return redirect('/login/')
 
                 #

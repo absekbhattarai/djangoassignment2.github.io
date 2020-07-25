@@ -17,9 +17,12 @@
     {% for blog in todayblogTable|dictsort:"posted_at" %} 
                 <div class="testbox" style="width: 500px;">
                     <div class="testbox-content">
-                    <div class="blog-title"><p style="font-size: 35px;color: rgb(44, 5, 184);">{{blog.title}}&nbsp<small style="font-size: 14px;background-color: rgba(243, 61, 61, 0.637);padding:2px;color:black;border-radius: 8px;">new</small></p></div>
-                    <div class="blog-content"><p>{{blog.blog}}</p></div>
-                    
+                    <div class="blog-title"><p style="font-size: 35px;color: rgb(44, 5, 184);">{{blog.title| truncatewords:3}}&nbsp<small style="font-size: 14px;background-color: rgba(243, 61, 61, 0.637);padding:2px;color:black;border-radius: 8px;">new</small></p></div>
+                    {% if request.user.is_authenticated %}
+                    <div class="blog-content"><p>{{blog.blog| truncatewords:10}}</p></div>
+                    {% else %}
+                    <div class="blog-content"><p>Login to view...</p></div>
+                    {% endif %}
                     <div class="name-age"><p style="font-size: 18px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; ">By: {{blog.author_username| upper}}<spam style="margin-left: 180px;padding-right:0;font-style: italic;">Posted at {{ blog.posted_at }}</spam></p></div>
                     <div class="detail"><a href="/homepage/detail/{{ blog.id }}">Detail</a></div>
                 </div>

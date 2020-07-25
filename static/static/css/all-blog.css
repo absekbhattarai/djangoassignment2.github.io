@@ -57,7 +57,8 @@ width: 382px;
 }
 
 .blog-content{
-  font-family: 'Courier New', Courier, monospace;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-right: 10px;
 }
 
 

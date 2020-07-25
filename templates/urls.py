@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import landing_page,blog_table,blog_form,today_blog,register_form,user_login,select_login,user_logout,user_profile,detail_of_blog,edit_user_profile,edit_user_profile,edit_blog,delete_blog
-
+from .views import landing_page,blog_table,blog_form,today_blog,register_form,user_login,select_login
+from .views import user_logout,user_profile,detail_of_blog,edit_user_profile,edit_user_profile,edit_blog,delete_blog
 
 urlpatterns = [
     path('',landing_page),

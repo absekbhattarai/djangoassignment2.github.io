@@ -14,12 +14,18 @@ from django.contrib import auth
 
 
 def landing_page(request):
+    if request.user.is_authenticated:
+        return redirect('/homepage/all-blogs/')
     return render(request, "templates/landing.html",{'pageTitle': 'Homepage'})
 
 def select_login(request):
+    if request.user.is_authenticated:
+        return redirect('/homepage/all-blogs/')
     return render(request,"templates/select-login.html",{'pageTitle':'Select Login'})
 
 def register_form(request):
+    if request.user.is_authenticated:
+        return redirect('/homepage/all-blogs/')
     registered = False
     user_details = Register() #username, pass, email
     bio_details = UserInfoForm() #name , dob
@@ -54,6 +60,8 @@ def user_logout(request):
     return redirect('/homepage/')
 
 def user_login(request):
+    if request.user.is_authenticated:
+        return redirect('/homepage/all-blogs/')
     blog_table = BlogDetails.objects.all()
     author_table = UserInfo.objects.all()
     if request.method == 'POST':
@@ -76,19 +84,21 @@ def user_login(request):
 
 @login_required
 def user_profile(request):
+    if not request.user.is_authenticated:
+        return redirect('/homepage/all-blogs/')
     loggedin_user = request.user
     blog_table = BlogDetails.objects.filter(author_username = loggedin_user)
     user_profile = UserInfo.objects.get(user = request.user)
     return render(request,'templates/profile.html',{'pageTitle':'Your Profile','user_profile':user_profile,'blogTable':blog_table})
 
 def blog_table(request):
-    blog_table = BlogDetails.objects.all()
+    blog_table = BlogDetails.objects.all().order_by('-posted_at')
     return render(request, "templates/blog-table.html",{'pageTitle': 'All Blogs','blogTable':blog_table})
     
 
 def today_blog(request):
     today = date.today()
-    today_blog_table = BlogDetails.objects.filter(posted_at=today)
+    today_blog_table = BlogDetails.objects.filter(posted_at=today).order_by('-posted_at')
     today_author_table = UserInfo.objects.all()
     return render(request, "templates/today-blog.html",{'pageTitle': 'Today Blogs','todayauthorTable': today_author_table,'todayblogTable':today_blog_table})
 
@@ -115,35 +125,27 @@ def detail_of_blog(request,user_id):
 
 @login_required
 def edit_user_profile(request):
-    # user_object =get_object_or_404(UserInfo,id=user_id) 
-    # 
-    #     user_form = EditProfileBio(request.POST,instance=user_object)
-       
-    #     if user_form.is_valid :
-    #         user_form.save()
-    #         request.user.save()
-    #         return redirect('/homepage/profile/')
-    #     else:
-    #         return HttpResponse("something went wrong")
-    # else:
-    #     user_form = EditProfileBio(instance=user_object)
+    u_id = request.user.id
+    bio_object = get_object_or_404(UserInfo,user_id = u_id)
+    user_object = get_object_or_404(User,id = u_id)
     if request.method == 'POST':
-        
-        user_form = EditUserProfile(request.POST,instance=request.user)
-        bio_form = EditProfileBio(request.POST)
+        user_form = EditUserProfile(request.POST,instance=user_object)
+        bio_form = EditProfileBio(request.POST,instance=bio_object)
+        print(bio_form)
         if user_form.is_valid and bio_form.is_valid:
-            user_form.save()
+            user_instance=user_form.save(commit=False)
+            user_instance.save()
             bio_instance = bio_form.save(commit=False)
             bio_instance.save()
             return redirect('/homepage/profile/')
         else:
             return HttpResponse("something went wrong")
     else:
-        user_form = EditUserProfile(instance=request.user)
-        bio_object = UserInfo.objects.filter(user_id=request.user.id).values()
-        print(bio_object)
+        user_form = EditUserProfile(instance=user_object)
+        bio_form = EditProfileBio(instance=bio_object)
         
-        return render(request,'templates/edit-profile.html',{'user_form':user_form,'bio_object':bio_object})
+        
+        return render(request,'templates/edit-profile.html',{'user_form':user_form,'bio_form':bio_form})
 
 
 @login_required

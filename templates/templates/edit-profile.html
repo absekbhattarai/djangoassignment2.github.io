@@ -17,17 +17,17 @@
     <header>Edit Profile</header>
     <form action="/homepage/profile/edit-profile/" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-    {% for u_bio in bio_object %}    
+        
     <div class="image-bio-wrapper">
         <div class="image-container">
-            <img class="profile-image" src="{{u_bio.profile_picture.url }}"><br>
+            <img class="profile-image" src="{{request.user.UserInfo.profile_picture.url }}"><br>
         </div>
         <div class="details">
             
             <div class="fname"><label>First Name </label>{{user_form.first_name}}</div><br>
             <div class="lname"><label>Last Name </label>{{ user_form.last_name}}</div><br>
-            <div class="date-of-birth"><label>D.O.B. </label><input name="date_of_birth" value="{{ u_bio.date_of_birth}}"></div><br>
-            <div class="bio"><label>Bio </label><input name="bio" value=" {{ u_bio.bio}}"></div><br>
+            <div class="date-of-birth"><label>D.O.B. </label>{{bio_form.date_of_birth}}</div><br>
+            <div class="bio"><label>Bio </label>{{bio_form.bio}}</div><br>
             
         </div>
         <div class="btn">
@@ -36,7 +36,7 @@
    
         
     </div>
-    {% endfor%}
+    
 </form>
 </body>
 </html>

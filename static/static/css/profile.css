@@ -70,7 +70,8 @@ body{
   
 
   .blog-content{
-    font-family: 'Courier New', Courier, monospace;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-right: 25px;
   }
 
   .testbox-img{
@@ -79,17 +80,24 @@ body{
       margin-left: 84%;
       margin-top: 25px;
   }
+  .testbox-img img:hover{
+    transform: scale(1.3);
+  }
 
-  .edit-btn{
+
+  .edit-btn a{
       width: 100%;
       margin-left: 15px;
+      padding-left: 25px;
       border-radius: 6px;
       padding-top: 10px;
+      padding-right: 30px;
+      padding-bottom: 10px;
       background-color: rgba(120, 119, 167, 0.849);
       border: none;
   }
 
-  .edit-btn:hover{
+  .edit-btn a:hover{
       background-color: rgb(83, 123, 255);
       color: white;
   }
