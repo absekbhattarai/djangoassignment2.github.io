@@ -24,3 +24,8 @@ class EditProfileBio(ModelForm):
     class Meta():
         model = UserInfo
         fields = ['bio','profile_picture','date_of_birth']
+
+class EditUserProfile(ModelForm):
+     class Meta():
+        model = User
+        fields = ['first_name','last_name']

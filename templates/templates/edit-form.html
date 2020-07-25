@@ -1,0 +1,32 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{pageTitle}}</title>
+    <link rel="stylesheet" href="{% static 'static/css/blog-form.css'%}">
+    <link href="https://fonts.googleapis.com/css2?family=Rowdies&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+{% include 'templates/nav.html' %}
+<main>
+    <div class="testbox">
+        <form action="/homepage/profile/edit-blog/{{form_id}}" method="POST">
+            {% csrf_token %}
+            <header>Edit your Blog!</header>
+            <div class="blog-details">
+                <div class="form-title"><label>Title</label> {{ blogForm.title }}<br><br></div>
+                <div class="blog-content"><label style="margin-left: 120px;font-size: 25px;">Your Blog</label> <br>&nbsp&nbsp{{ blogForm.blog }}<br><br></div>
+            </div>
+            <div class="button">
+            <input class="edit-button" type="Submit" value="EDIT"></input><a href="/homepage/profile/edit-blog/delete/{{form_id}}">Delete</a>
+            
+            </div>
+        </form>
+
+</main>
+</body>
+</html>

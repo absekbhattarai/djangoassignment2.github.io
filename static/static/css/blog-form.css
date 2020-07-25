@@ -1,5 +1,8 @@
 
 .button {
+  display: inline;
+}
+.post-button{
   background-color: #3a32a862;
   border: none;
   color: white;
@@ -7,11 +10,33 @@
   font-style: normal;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
   font-size: 16px;
   line-height: 1rem;
-  margin-left: 42%;
+  margin-left: 43%;
   border-radius: 8px;
+}
+
+.post-button:hover{
+  background-color: #4338e4 ;
+}
+
+
+.edit-button{
+  background-color: #3a32a862;
+  border: none;
+  color: white;
+  padding: 8px 20px;
+  font-style: normal;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 1rem;
+  margin-left: 38%;
+  border-radius: 8px;
+}
+
+.edit-button:hover{
+  background-color:#1100fc ;
 }
 
 
@@ -85,3 +110,26 @@ header{
     background-color: rgb(204, 207, 224);
 
 }
+
+.button a{
+  background-color: #3a32a862;
+  
+  padding-top: 7px;
+  padding-left: 15px;
+  padding-bottom: 6px;
+  padding-right: 13px;
+  margin-left: 50px;
+  text-align: center;
+  font-style: normal;
+  color: white;
+  text-transform: uppercase;
+  font-family:Arial, Helvetica, sans-serif ; 
+ text-decoration: none;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+.button a:hover{
+  background-color: red;
+}
+

@@ -20,7 +20,7 @@ class UserInfo(models.Model):
   user = models.OneToOneField(User,on_delete=models.CASCADE)
   date_of_birth = models.DateField()
   bio = models.CharField(max_length=150,default="No Bio")
-  profile_picture = models.ImageField(null=True,blank=True)
+  profile_picture = models.ImageField(default='null-user-image.jpg')
   
   def __str__(self):
     return self.user.email

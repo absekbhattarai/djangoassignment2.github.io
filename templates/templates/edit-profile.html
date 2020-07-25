@@ -15,21 +15,27 @@
 <body>
     {% include 'templates/nav.html' %}<br><br><br>
     <header>Edit Profile</header>
+    <form action="/homepage/profile/edit/" method="POST" enctype="multipart/form-data">
+    {% for u_bio in bio_object %}    
     <div class="image-bio-wrapper">
         <div class="image-container">
-            
+            <img class="profile-image" src="{{u_bio.profile_picture.url }}"><br>
         </div>
         <div class="details">
-            <div class="name-container"><p class="profile-name">{{request.user}}</p></div>
-            <div class="fname"><label>First Name </label>{{ request.user.first_name}}</div><br>
-            <div class="lname"><label>Last Name </label>{{ request.user.last_name}}</div><br>
-            <div class="date-of-birth"><label>D.O.B. </label>{{ user_form.date_of_birth}}</div><br>
-        </div>
-        <div class="btn">
-            <a href="/homepage/profile/edit-profile/">Edit Profile</a>
+            <div class="name-container"></div>
+            <div class="fname"><label>First Name </label>{{user_form.first_name}}</div><br>
+            <div class="lname"><label>Last Name </label>{{ user_form.last_name}}</div><br>
+            <div class="date-of-birth"><label>D.O.B. </label><input name="date_of_birth" value="{{ u_bio.date_of_birth}}"></div><br>
+            <div class="bio"><label>Bio </label><input name="bio" value=" {{ u_bio.bio}}"></div><br>
             
         </div>
+        <div class="btn">
+            <button type="submit" class="edit-btn">Edit Profile</a>  
+        </div>
+   
         
     </div>
+    {% endfor%}
+</form>
 </body>
 </html>

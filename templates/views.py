@@ -5,7 +5,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserChangeForm
 from datetime import date
 from .forms import MyFormBlog
-from .login_register import Register, UserInfoForm,EditProfileBio
+from .login_register import Register, UserInfoForm,EditProfileBio,EditUserProfile
 from .models import BlogDetails, UserInfo
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -114,17 +114,59 @@ def detail_of_blog(request,user_id):
     return render(request,'templates/details.html',{'detail_obj':detail_obj,'pageTitle':'Detail Blog'})
 
 @login_required
-def edit_user_profile(request,user_id):
-    user_form = EditProfileBio(request.POST)
-    user_object =get_object_or_404(UserInfo,id=user_id) 
+def edit_user_profile(request):
+    # user_object =get_object_or_404(UserInfo,id=user_id) 
+    # 
+    #     user_form = EditProfileBio(request.POST,instance=user_object)
+       
+    #     if user_form.is_valid :
+    #         user_form.save()
+    #         request.user.save()
+    #         return redirect('/homepage/profile/')
+    #     else:
+    #         return HttpResponse("something went wrong")
+    # else:
+    #     user_form = EditProfileBio(instance=user_object)
     if request.method == 'POST':
-        user_form = EditProfileBio(request.POST,instance=user_object)
-        form = UserChangeForm(request.POST,request.user)
-        if user_form.is_valid and form.is_valid():
-            form.save()
+        
+        user_form = EditUserProfile(request.POST,instance=request.user)
+        bio_form = EditProfileBio(request.POST)
+        if user_form.is_valid and bio_form.is_valid:
             user_form.save()
+            bio_instance = bio_form.save(commit=False)
+            bio_instance.user_id = request.user.id
+            bio_instance.save()
+            return redirect('/homepage/profile/')
+        else:
+            return HttpResponse("something went wrong")
+    else:
+        user_form = EditUserProfile(instance=request.user)
+        bio_object = UserInfo.objects.filter(user_id=request.user.id).values()
+        print(bio_object)
+        
+        return render(request,'templates/edit-profile.html',{'user_form':user_form,'bio_object':bio_object})
+
+
+@login_required
+def edit_blog(request,blog_id):
+    blog_object = get_object_or_404(BlogDetails,id = blog_id)
+    form_id = blog_id
+    if request.method == "POST":
+        blog_form = MyFormBlog(request.POST,instance=blog_object)
+        print(blog_form)
+        if blog_form.is_valid():
+            blog_instance = blog_form.save(commit=False)
+            blog_instance.save()
             return redirect('/homepage/profile/')
         else:
             return HttpResponse("something went wrong")
 
-    return render(request,'templates/edit-profile.html',{'user_form':user_form})
+   
+    blog_form = MyFormBlog(instance=blog_object)
+    return render(request,'templates/edit-form.html',{'blogForm':blog_form,'form_id':form_id})
+
+@login_required
+def delete_blog(request,form_id):
+     blog_object = BlogDetails.objects.get(id = form_id)
+     blog_object.delete()
+     return redirect('/homepage/profile/')

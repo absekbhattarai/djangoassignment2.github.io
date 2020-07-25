@@ -92,4 +92,41 @@ body{
       background-color: rgb(85, 62, 211);
       color: white;
   }
+
+  .edit-blog{
+    margin-top: 20px;
+    margin-left: 0;
+    background-color: rgb(158, 159, 238);
+    width: min-content;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 12px;
+    border-radius: 8px;
+  }
+
+  .edit-blog:hover{
+    background-color: rgb(97, 99, 223);
+  }
+
+  .detail{
+    margin-top: 20px;
+    margin-left: 0;
+    background-color: rgb(158, 159, 238);
+    width: min-content;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 12px;
+    border-radius: 8px;
+  }
   
+  .detail:hover{
+    background-color: rgb(97, 99, 223);
+  }
+  
+
+  .btn-container{
+      display: flex;
+      flex-wrap: wrap;
+  }
